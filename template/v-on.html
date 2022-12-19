@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id = "app">
+        <p>現在の {{ number }} 回クリックされています</p>
+        <button v-on:click="countUp()">+</button>
+
+        <p v-on:mousemove="changeColor" v-on:mouseleave="removeColor" 
+            :class=color>マウスを乗せてください
+            <span v-on:mousemove.stop="" v-on:mouseleave.stop="">色が変わらない</span>
+        </p>
+        <input type="text" v-on:keyup="keyUp">
+        <p> {{ inputedKey }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                number : 0,
+                color : '',
+                inputedKey: ''
+            },
+            methods: {
+                countUp: function() {
+                    this.number += 1;
+                },
+                changeColor(e) {
+                    this.color = 'red'
+                } ,
+                removeColor() {
+                    this.color = ''
+                },
+                nonEvent(event) {
+                    event.stopPropagation();
+                },
+                keyUp(event) {
+                    // alert('aaaa')
+                    this.inputedKey += event.key;
+                }
+
+            }
+        })
+
+    </script>
+</body>
+</html>

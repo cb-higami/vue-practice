@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .bg-blue {
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="red bg-blue">hello</h1>
+        <!-- <h1 :class="{ red: true, 'bg-blue': false }">hello</h1> -->
+        <!-- <h1 :class="{ red: isActive, 'bg-blue': !isActive }">hello</h1> -->
+        <h1 :class="classObject">hello</h1>
+        <button @click="isActive=!isActive">change class</button>
+
+        
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data : {
+                isActive: true
+            },
+            computed: {
+                classObject : function() {
+                    return { red: this.isActive, 'bg-blue': !this.isActive }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
