@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <template v-if="ok">
+            <p>hello</p>
+            <p>good night</p>
+        </template>
+        <button @click="ok = !ok ">button</button>
+        
+        <ul>
+            <li v-for="(f, index) in fruits">({{ index }}) {{ f }}</li>
+        </ul>
+
+        <ul>
+            <template v-for="f in fruits">
+                <li> {{ f }}</li>
+                <hr>
+            </template>
+        </ul>
+
+        <template ></template>
+            <table>
+                <thead>
+                    <tr>
+                        <th>firstName</th>
+                        <th>lastName</th>
+                        <th>age</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <template v-for="o in objects">
+                        <tr>
+                            <td>{{ o.firstName }}</td>
+                            <td>{{ o.lastName }}</td>
+                            <td>{{ o.age }}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data : {
+                ok:true,
+                fruits: ['apple', 'banana', 'orange'],
+                objects : 
+                [
+                    {
+                        firstName:'higami',
+                        lastName: 'koki',
+                        age: '30',
+                    },
+                    {
+                        firstName:'aaaaa',
+                        lastName: 'bbbbb',
+                        age: '3033',
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
