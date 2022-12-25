@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>hello {{ name }}</p>
+        <button @click="name = 'koki'">change Name</button>
+        <button @click="name = 'aaaaa'">change Name aaaa</button>
+        
+        <button @click="destory">destroy instance</button>
+        <button @click="display">display</button>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data : {
+                name: 'higami'
+            },
+            beforeCreate : function() {
+                console.log('beforeCreate')
+            },
+            created : function() {
+                console.log('created')
+            },
+            beforeMount : function() {
+                console.log('beforeMount')
+            },
+            mounted : function() {
+                console.log('mounted')
+            },
+
+            //特定プロパティの再描画時に１度だけ走る
+            beforeUpdate : function() {
+                console.log('beforeupdate')
+            },
+            updated : function() {
+                console.log('updated')
+            },
+            beforeDestroy : function() {
+                console.log('beforeDestroy')
+            },
+            destroyed : function() {
+                console.log('destroyed')
+            },
+            methods : {
+                destory: function() {
+                    this.$destroy()
+                },
+                display: function() {
+                    console.log(this)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
