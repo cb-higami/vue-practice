@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+
+    <div id="app2">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+    
+    <script>
+        var data = {
+            number : 12
+        }
+        Vue.component('my-component', {
+            data : function() {
+                //以下のようにグローバル変数を返すと、そのグローバル変数が参照されるので、クリックすると全ての値が変更される
+                // return data;
+                // しかし、関数として返すと、各値としてもたれる？
+                // そのため、コンポーネントで持つデータは関数として扱う
+                return {number : 12}
+            },
+            template : '<button @click="increment">{{ number }}</button>',
+            methods: {
+                increment: function() {
+                    this.number ++;
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app'
+        })
+        // new Vue({
+        //     el: '#app',
+        //     data : {
+        //         number : 12
+        //     },
+        //     template : '<p>いいね ({{ number }})</p>'
+        // })
+    </script>
+</body>
+</html>
