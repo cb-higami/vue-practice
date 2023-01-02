@@ -1,16 +1,20 @@
 <template>
-  <p>good ( {{ number }})</p>
+  <div>
+    <LikeHeaderTag></LikeHeaderTag>
+    <LikeNumber></LikeNumber>
+
+  </div>
 </template>
 
 <script>
+import likeH from './components/LikeHeader.vue';
+
 export default {
-  data: function() {
-    return {
-      number : 4
-    }
+  //APP.vue 内で使用するコンポーネントを記載（ローカル登録）
+  components: {
+    LikeHeaderTag : likeH,
   }
 }
+
 </script>
 
-<style>
-</style>

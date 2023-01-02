@@ -1,0 +1,23 @@
+<template>
+  <div>
+
+    <p>good ( {{ number }} )</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      number : 4
+    }
+  },
+  methods: {
+    increment() {
+      this.number = this.number +1 ;
+    }
+  }
+}
+</script>
+
