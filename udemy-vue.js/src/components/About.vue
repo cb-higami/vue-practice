@@ -1,3 +1,21 @@
 <template>
-    <p>about</p>
+    <div>
+        <p>about</p>
+        <input type="text">
+    </div>
 </template>
+
+
+<script>
+export default {
+    destroyed() {
+        console.log('destoryed')
+    },
+    deactivated() {
+        console.log('deactivated')
+    },
+    activated() {
+        console.log('activated')
+    }
+}
+</script>
