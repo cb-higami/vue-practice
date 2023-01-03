@@ -24,12 +24,12 @@
 
     <div>
       <h2>event form</h2>
-      <label for="title">タイトル</label>
-      <input type="text" id="title" v-model="eventData.title">
-      <input type="text" id="title" v-model.lazy="eventData.title">
-      <p>
-        {{ eventData.title }}
-      </p>
+      <EventTitle v-model="eventData.title"></EventTitle>
+      <!-- <EventTitle 
+        :value="eventData.title"
+        @input="eventData.title = $event"
+      ></EventTitle> -->
+
 
       <label for="maxNumber">最大人数</label>
       <input type="number" id="maxNumber" v-model.number.lazy="eventData.number">
@@ -72,6 +72,7 @@
 import likeH from './components/LikeHeader.vue';
 import About from './components/About.vue'
 import Home from './components/Home.vue'
+import EventTitle from './components/EventTitle.vue';
 
 export default {
   data() {
@@ -85,14 +86,14 @@ export default {
         detail: '',
         isPrivate: false,
         target: [],
-        location: '大阪'
+        location: ['大阪']
       }
     }
   },
   //APP.vue 内で使用するコンポーネントを記載（ローカル登録）
   components: {
     LikeHeaderTag : likeH,
-    About, Home
+    About, Home, EventTitle
   }
 }
 
