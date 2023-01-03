@@ -2,10 +2,7 @@
   <div>
     <!-- <LikeHeaderTag headerText="トータルのいいね数"></LikeHeaderTag> -->
     <LikeHeaderTag>
-      <template v-slot:title>
         <h2>hello</h2>
-      </template>
-
       <template #test>
         <h1>トータルのいいね数</h1>
         <p>{{ number }}</p>
@@ -16,23 +13,31 @@
     <LikeNumber :totalNumber="6"></LikeNumber>
     <LikeNumber ></LikeNumber>
 
+    <button @click="currentComponent = 'Home'">home</button>
+    <button @click="currentComponent = 'About'">about</button>
 
 
+    {{ currentComponent }}
+    <component :is="currentComponent"></component>
   </div>
 </template>
 
 <script>
 import likeH from './components/LikeHeader.vue';
+import About from './components/About.vue'
+import Home from './components/Home.vue'
 
 export default {
   //APP.vue 内で使用するコンポーネントを記載（ローカル登録）
   data() {
     return {
-      number: 10
+      number: 10,
+      currentComponent: "Home"
     }
   },
   components: {
     LikeHeaderTag : likeH,
+    About, Home
   }
 }
 
