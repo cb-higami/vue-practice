@@ -1,7 +1,17 @@
 <template>
   <div>
-    <LikeHeaderTag></LikeHeaderTag>
-    <p>{{ number }}</p>
+    <!-- <LikeHeaderTag headerText="トータルのいいね数"></LikeHeaderTag> -->
+    <LikeHeaderTag>
+      <template v-slot:title>
+        <h2>hello</h2>
+      </template>
+
+      <template #test>
+        <h1>トータルのいいね数</h1>
+        <p>{{ number }}</p>
+      </template>
+      
+    </LikeHeaderTag>
     <LikeNumber :total-number="6"></LikeNumber>
     <LikeNumber :totalNumber="6"></LikeNumber>
     <LikeNumber ></LikeNumber>
