@@ -4,22 +4,28 @@
         <h1> {{ title | upperCase }}</h1>
         <h1> {{ 'aaaaa' | upperCase }}</h1>
         <h1> {{ "WELCOME TO TOKYO" | lowerCase }}</h1>
+        <button @click="number++">+1</button>
+        <h2>{{ number }}</h2>     
+        <hr>
+        <CountNumber></CountNumber>
     </div>
 </template>
 
 <script>
+import CountNumber from './CounterNumber.vue'
+import { tokyoNumber } from '@/tokyoNumber';
+
 export default {
-    data() {
-        return {
-            title : 'welcome to tokyo'
-        }
+    mixins: [tokyoNumber],
+    components : {
+        CountNumber
     },
-    //フィルター ローカル登録
-    filters: {
-        lowerCase(value) {
-            return value.toLowerCase()
-        }
-    },
+    // //フィルター ローカル登録
+    // filters: {
+    //     lowerCase(value) {
+    //         return value.toLowerCase()
+    //     }
+    // },
     //ディレクティブ ローカル登録
     directives: {
         border(el, binding) {
