@@ -1,10 +1,26 @@
 <template>
-    <p v-border:solid.round.shadow="{ width: '7px' , color : 'red'}">home</p>
+    <div>
+        <p v-border:solid.round.shadow="{ width: '7px' , color : 'red'}">home</p>
+        <h1> {{ title | upperCase }}</h1>
+        <h1> {{ 'aaaaa' | upperCase }}</h1>
+        <h1> {{ "WELCOME TO TOKYO" | lowerCase }}</h1>
+    </div>
 </template>
 
 <script>
-//ディレクティブ ローカル登録
 export default {
+    data() {
+        return {
+            title : 'welcome to tokyo'
+        }
+    },
+    //フィルター ローカル登録
+    filters: {
+        lowerCase(value) {
+            return value.toLowerCase()
+        }
+    },
+    //ディレクティブ ローカル登録
     directives: {
         border(el, binding) {
             el.style.borderWidth = binding.value.width

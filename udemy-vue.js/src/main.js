@@ -30,6 +30,10 @@ Vue.component("LikeNumber", LikeNumber);
 //   }
 // })
 
+// グローバル登録
+Vue.filter("upperCase", function(value) {
+  return value.toUpperCase()
+})
 
 new Vue({
   render: h => h(App),
