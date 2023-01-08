@@ -89,3 +89,6 @@ component
 
 なぜ、vue にトランジション機能が存在するか？
     複雑な操作に対して、DOM操作が複雑になるため <transtion>を用意している？
+
+vue router とは
+    URLとvue js を関連づけるもの
