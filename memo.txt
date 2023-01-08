@@ -92,3 +92,15 @@ component
 
 vue router とは
     URLとvue js を関連づけるもの
+
+    以下でURLとコンポーネントを関連づける
+    
+        export default new Router({
+        routes: [
+            { path: '/', component: Home},
+            { path: '/users', component: Users},
+        
+    http://localhost:8080/#/usersの時、Users コンポネートが表示される
+    #/usersはページ内のhref に移動するイメージ
+    （例：<a href="#core-web-vitals">Core Web Vitals</a>）
+    そのため、リクエストは行われていない。
