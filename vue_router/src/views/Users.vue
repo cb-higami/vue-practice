@@ -7,6 +7,11 @@
         <router-link :to="'/users/' + (Number(id) +1) + '/profile'">次のユーザープロフィール</router-link>
         <router-link :to="{ name : 'users-id-profile', params: { id: Number(id) +1}}">次のユーザープロフィール</router-link>
         <router-view></router-view>
+        <button @click="increment">+1</button>
+        <button @click="decrement">-1</button>
+        <p>{{ this.$store.state.count }}</p>
+        <p>{{ doubleCount }}</p>
+        <p>{{ tripleCount }}</p>
     </div>
 </template>
 
@@ -31,5 +36,21 @@ export default {
             next(false)
         }
     },
+    methods: {
+        increment() {
+            this.$store.state.count ++;
+        },
+        decrement() {
+            this.$store.state.count--;
+        }
+    },
+    computed : {
+        doubleCount() {
+            return this.$store.getters.doubleCount
+        },
+        tripleCount() {
+            return this.$store.getters.tripleCount
+        },
+    }
 }
 </script>

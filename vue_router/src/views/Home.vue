@@ -2,11 +2,17 @@
     <div>
         <h1>home</h1>
         <button @click="toUsers">users へいく</button>
+        <p>{{ count }}</p>
     </div>
 </template>
 
 <script>
 export default {
+    computed: {
+        count() {
+            return this.$store.state.count;
+        }
+    },
     methods: {
         toUsers() {
             console.log(this)
