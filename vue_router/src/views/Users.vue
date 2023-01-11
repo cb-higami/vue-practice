@@ -11,7 +11,7 @@
         <button @click="decrement(1)">-1</button>
         <!-- <button @click="increment">+1</button>
         <button @click="decrement">-1</button> -->
-        <p>{{ this.$store.state.count }}</p>
+        <p>{{ this.$store.state.count.count }}</p>
         <p>{{ doubleCount }}</p>
         <p>{{ tripleCount }}</p>
 
