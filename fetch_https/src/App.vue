@@ -27,13 +27,13 @@ export default {
       name: "",
       comment : "",
       posts : [],
-      url : 'https://firestore.googleapis.com/v1/projects/vue-js-http-e6fdf/databases/(default)/documents/comments'
+      url : '/comments'
     }
   },
   created() {
     axios.get(this.url)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.posts = res.data.documents
         console.log(this.posts[0].fields)
       });
