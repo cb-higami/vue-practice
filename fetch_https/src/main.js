@@ -28,6 +28,8 @@ axios.interceptors.response.use(
     return new Promise.reject(error)
   }
 )
+
+store.dispatch('autoLogin');
 new Vue({
   router,
   store,

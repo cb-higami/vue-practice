@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from 'vuex';
 import axios from '../axios-auth';
-
+import router from "@/router";
 
 Vue.use(Vuex);
 
@@ -18,6 +18,11 @@ export default new Vuex.Store({
         }
     }
     ,actions: {
+        autoLogin(){
+            const idToken = localStorage.getItem('idToken')
+            if(!idToken) return;
+            this.commit('updateIdToken', idToken);
+        },
         login({commit}, authData) {
             axios.post(
                 "/accounts:signInWithPassword?key=AIzaSyANeWISo5x1-CZarmYStrH46ovju6LouvU",
@@ -28,7 +33,8 @@ export default new Vuex.Store({
                 },
             ).then(response => {
                 commit('updateIdToken', response.data.idToken)
-                console.log(response)
+                localStorage.setItem('idToken', response.data.idToken);
+                router.push('/')
             }).catch(e => {
                 console.log(e)
             })
@@ -43,7 +49,7 @@ export default new Vuex.Store({
                 },
             ).then(response => {
                 commit('updateIdToken', response.data.idToken)
-                console.log(response)
+                router.push('/')
             }).catch(e => {
                 console.log(e)
             })
