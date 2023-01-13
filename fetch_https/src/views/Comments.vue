@@ -27,16 +27,25 @@
         name: "",
         comment : "",
         posts : [],
-        url : '/comments'
+        url : '/comments',
       }
     },
     created() {
-      axios.get(this.url)
+        axios.get(this.url, { 
+            headers: {
+                Authorization: `Bearer ${this.idToken}`
+            } 
+        })
         .then(res => {
           // console.log(res.data)
           this.posts = res.data.documents
           console.log(this.posts[0].fields)
         });
+    },
+    computed: {
+        idToken() {
+            return this.$store.getters.idToken;
+        }
     },
     methods : {
       createComment() {
@@ -50,7 +59,10 @@
               stringValue : this.comment
             }
           }
-        }
+        },
+        { headers: {
+            Authorization: `Bearer ${this.idToken}`
+        } }
         ).then(response => {
           console.log(response);
         }).catch( error => {
