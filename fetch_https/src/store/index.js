@@ -18,10 +18,10 @@ export default new Vuex.Store({
         }
     }
     ,actions: {
-        autoLogin(){
+        autoLogin({ commit }){
             const idToken = localStorage.getItem('idToken')
             if(!idToken) return;
-            this.commit('updateIdToken', idToken);
+            commit('updateIdToken', idToken);
         },
         login({commit}, authData) {
             axios.post(
@@ -38,6 +38,11 @@ export default new Vuex.Store({
             }).catch(e => {
                 console.log(e)
             })
+        },
+        logout({ commit }) {
+            commit('updateIdToken', null);
+            localStorage.removeItem('idToken');
+            router.push('/login')
         },
         register({commit}, authData) {
             axios.post(
