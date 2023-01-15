@@ -1,0 +1,539 @@
+{
+    "root": {
+        "data": {
+            "id": "cprslwdkzr40",
+            "created": 1673687233142,
+            "text": "vue js",
+            "expandState": "expand"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cprsm0ybuug0",
+                    "created": 1673687243103,
+                    "text": "ディレクティブについて",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprsps8wiqg0",
+                            "created": 1673687537608,
+                            "text": "v-xxみたいなやつ",
+                            "hyperlink": "https://jp.vuejs.org/v2/guide/syntax.html#%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96",
+                            "hyperlinkTitle": "test",
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cprspw3of2g0",
+                            "created": 1673687545999,
+                            "text": "v-bind",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprsr8k4s5c0",
+                                    "created": 1673687651480,
+                                    "text": "<a v-bind:href=\"url\">",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cprss40849s0",
+                                            "created": 1673687719933,
+                                            "text": "<a :href=\"url\">",
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprssdaebg00",
+                            "created": 1673687740139,
+                            "text": "v-on",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprssfa8t8g0",
+                                    "created": 1673687744484,
+                                    "text": "<a v-on:click=\"doSomething\">",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cprssoi8cps0",
+                                            "created": 1673687764558,
+                                            "text": "<a @click=\"doSomething\">",
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprvwmtfdg00",
+                            "created": 1673696537667,
+                            "text": "v-once"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cprvwq6okrk0",
+                            "created": 1673696544999,
+                            "text": "v-bind:style"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cprst139vog0",
+                            "created": 1673687791951,
+                            "text": "修飾子",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprst743ajc0",
+                                    "created": 1673687805061,
+                                    "text": "<form v-on:submit.prevent=\"xxx\" >",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprsvj41w0w0",
+                    "created": 1673687987909,
+                    "text": "算出プロパティ",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprsn9opyvc0",
+                            "created": 1673687340477,
+                            "text": "computed",
+                            "note": "テンプレート内にロジックを記載できるが、雑多になる。\n\n<div id=\"example\">\n  {{ message.split('').reverse().join('') }}\n</div>\n\nそのためreversedMessageのようなgetter メソッドを設定し用いる\n\n<div id=\"example\">\n  <p>Original message: \"{{ message }}\"</p>\n  <p>Computed reversed message: \"{{ reversedMessage }}\"</p>\n</div>\n\nvar vm = new Vue({\n  el: '#example',\n  data: {\n    message: 'Hello'\n  },\n  computed: {\n    reversedMessage: function () {\n      return this.message.split('').reverse().join('')\n    }\n  }\n})",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprsy6dn31c0",
+                                    "created": 1673688195283,
+                                    "text": "methods との違い",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cprsyat0eo00",
+                                            "created": 1673688204919,
+                                            "text": "データプロパティが変わらなければ関数が実行されない\n（計算結果がキャッシュされている）",
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cprszheex6o0",
+                                            "created": 1673688297638,
+                                            "text": "メソッド呼び出しは、再描画が起きると常に関数を実行します",
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprtht1bpk80",
+                            "created": 1673689733523,
+                            "text": "アプリ独自のルールで加工する（getter のイメージ）",
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprt03oslhc0",
+                    "created": 1673688346156,
+                    "text": "監視プロパティ",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprt07k2c080",
+                            "created": 1673688354576,
+                            "text": "watcher",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprt197xeyg0",
+                                    "created": 1673688436560,
+                                    "text": "非同期やコストの高い処理を実行したいときに最も便利",
+                                    "expandState": "expand"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cpsknqly9hc0",
+                                    "created": 1673766368393,
+                                    "text": "あるデータが変更されたタイミングで発火、何かの処理を実行したいときに用いられます"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprtsbm29880",
+                    "created": 1673690557601,
+                    "text": "v-if",
+                    "layout_mind_offset": {
+                        "x": -12.49999996274721,
+                        "y": 172.24999931082135
+                    },
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprtuo0crko0",
+                            "created": 1673690741315,
+                            "text": "条件がtrue になるまで描画されない",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprtw20l5b40",
+                                    "created": 1673690850168,
+                                    "text": "コスト",
+                                    "layout_right_offset": {
+                                        "x": 70.00000000000006,
+                                        "y": -4
+                                    },
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cprtw69nhao0",
+                                            "created": 1673690859423,
+                                            "text": "初期描画：高い、低い（true の場合高いが、falseの場合描画されないため）",
+                                            "layout_right_offset": {
+                                                "x": 94,
+                                                "y": -39
+                                            },
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cprtweouurc0",
+                                            "created": 1673690877757,
+                                            "text": "切替：高い（描画がDOMに対し削除追加されるため）",
+                                            "layout_right_offset": {
+                                                "x": 108,
+                                                "y": -2
+                                            },
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprtsg1nhc80",
+                    "created": 1673690567251,
+                    "text": "v-show",
+                    "layout_mind_offset": {
+                        "x": 413.9999935925008,
+                        "y": 584.749994425194
+                    },
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprtt0znzv40",
+                            "created": 1673690612843,
+                            "text": "要素は常に描画されて DOM に維持す",
+                            "layout_right_offset": {
+                                "x": 423.74999368563294,
+                                "y": 4.999999925494194
+                            },
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprtw20l5b40",
+                                    "created": 1673690850168,
+                                    "text": "コスト",
+                                    "layout_right_offset": {
+                                        "x": 380.00000000000006,
+                                        "y": 2
+                                    },
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cprtw69nhao0",
+                                            "created": 1673690859423,
+                                            "text": "初期描画：高い",
+                                            "layout_right_offset": {
+                                                "x": 322,
+                                                "y": -24
+                                            },
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cprtweouurc0",
+                                            "created": 1673690877757,
+                                            "text": "切替：低い",
+                                            "layout_right_offset": {
+                                                "x": 276,
+                                                "y": 2
+                                            },
+                                            "expandState": "expand"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprtt25zsds0",
+                            "created": 1673690615402,
+                            "text": "css display プロパティによって表示制御される",
+                            "layout_right_offset": {
+                                "x": 478.7499928660691,
+                                "y": 22.499999664723987
+                            },
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprsnp2951c0",
+                    "created": 1673687373947,
+                    "text": "v-if, v-show の使い分け",
+                    "layout_mind_offset": {
+                        "x": 487.24999789521075,
+                        "y": 718.2499928288164
+                    },
+                    "progress": null,
+                    "priority": null,
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprspdge67c0",
+                            "created": 1673687505409,
+                            "text": "切替コストがv-if では高いため（DOMの削除、追加）、表示頻度が高いものはv-show を利用する！！！",
+                            "layout_right_offset": {
+                                "x": 867.0000057305224,
+                                "y": 2
+                            },
+                            "expandState": "expand"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprsnnlzk2o0",
+                    "created": 1673687370787,
+                    "text": "ライフサイクル",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cprw5l5hjuw0",
+                            "created": 1673697239320,
+                            "text": "beforeCreate",
+                            "priority": 1
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw6ev1ti80",
+                                    "created": 1673697303993,
+                                    "text": "インスタンスが初期化されるときに同期的に呼ばれます"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw5p5mnmg0",
+                            "created": 1673697248036,
+                            "text": "created",
+                            "priority": 2
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw6gelfkw0",
+                                    "created": 1673697307351,
+                                    "text": "データ監視、算出プロパティ、メソッドのセットアップが完了したことを意味する。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw5re5vhc0",
+                            "created": 1673697252906,
+                            "text": "beforeMount",
+                            "priority": 3
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw742kz6g0",
+                                    "created": 1673697358868,
+                                    "text": "render 関数が初めて呼び出されようと、マウンティングが開始される直前に呼ばれます。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw5tvcocg0",
+                            "created": 1673697258299,
+                            "text": "mounted",
+                            "priority": 4
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw7em2cio0",
+                                    "created": 1673697381814,
+                                    "text": "ビュー全体がレンダリングされた後にのみ実行される"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw5wd5gwo0",
+                            "created": 1673697263728,
+                            "text": "beforeUpdate",
+                            "priority": 5
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw8slkvd40",
+                                    "created": 1673697490623,
+                                    "text": "データが変更されるとき、DOM が適用される前に呼ばれます"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw63dd0hs0",
+                            "created": 1673697278979,
+                            "text": "updated",
+                            "priority": 6
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cprw92xg39k0",
+                                    "created": 1673697513109,
+                                    "text": "ビュー全体が再レンダリングされた後にのみ実行"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cprw9vbz32o0",
+                            "created": 1673697574937,
+                            "text": "ダイアグラム",
+                            "image": "https://jp.vuejs.org/v2/guide/instance.html#%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%83%80%E3%82%A4%E3%82%A2%E3%82%B0%E3%83%A9%E3%83%A0",
+                            "imageTitle": "ダイアグラム",
+                            "imageSize": {
+                                "width": 0,
+                                "height": 0
+                            }
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cprspmhnud40",
+                    "created": 1673687525077,
+                    "text": "カスタムコンポーネントについて",
+                    "expandState": "expand"
+                },
+                "children": []
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
